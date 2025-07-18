@@ -63,7 +63,7 @@ const Footer = () => {
       </div>
 
       <div className="text-center text-xs text-yellow-200 mt-10">
-        © 2025 Darbhanga Dairy. All rights reserved. Designed with <span className="text-white">♥</span> for Fresh Living.
+        © 2025 Maraki IT Solutions. All rights reserved. Designed with <span className="text-white">♥</span> for Fresh Living.
       </div>
     </footer>
   );

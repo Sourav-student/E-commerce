@@ -20,13 +20,13 @@ const Cart = () => {
   })
 
   //handing quantity change
-  const handleChangeQuantity = (index, newQuantity) => {
-    setToCart((prevCart) => {
-      const updatedCart = [...prevCart];
-      updatedCart[index].quantity = newQuantity > 0 ? newQuantity : 1;
-      return updatedCart;
-    });
-  };
+  // const handleChangeQuantity = (index, newQuantity) => {
+  //   setToCart((prevCart) => {
+  //     const updatedCart = [...prevCart];
+  //     updatedCart[index].quantity = newQuantity > 0 ? newQuantity : 1;
+  //     return updatedCart;
+  //   });
+  // };
 
   //Checkout function
   const handleCheckout = () => {
@@ -62,14 +62,15 @@ const Cart = () => {
                     <h2 className="text-xl font-semibold text-[#444]">{product.productName}</h2>
                     <p className="text-lg text-gray-600">₹{product.price}</p>
                     <div>
-                      <label htmlFor="quantity">Quantity - </label>
+                      {/* <label htmlFor="quantity">Quantity - </label>
                       <input
                         type="number"
                         value={product.quantity}
                         onChange={(e) => handleChangeQuantity(index, parseInt(e.target.value) || 1)}
                         className="w-16 text-center border rounded-md px-2 py-1 bg-white text-gray-700"
-                      />
+                      /> */}
                     </div>
+                    <h2 className="text-[17px] font-normal text-[#444]">Quantity - {product.quantity}</h2>
                   </div>
                   <button
                     onClick={() => handleRemove(product)}
@@ -86,19 +87,14 @@ const Cart = () => {
 
           {/* Place Order Button */}
           {cart.length > 0 && (
-            <div>
-              <div>
-
-              </div>
-              <div
-                className="absolute bottom-0 bg-white w-full p-3 shadow-inner rounded-b-xl z-10 flex justify-between">
-                <p className='flex justify-center items-center text-2xl'>₹{totalAmount}</p>
-                <NavLink to='/checkout'
-                  className="py-2 px-4 mt-6 bg-[#f61a02] text-white font-medium rounded-md hover:bg-[#c30000] transition-all"
-                  onClick={handleCheckout}>
-                  Place Order
-                </NavLink>
-              </div>
+            <div
+              className="absolute bottom-0 bg-white w-full p-3 shadow-inner rounded-b-xl z-10 flex justify-between">
+              <p className='flex justify-center items-center text-2xl'>₹{totalAmount}</p>
+              <NavLink to='/checkout'
+                className="py-2 px-4 mt-6 bg-[#f61a02] text-white font-medium rounded-md hover:bg-[#c30000] transition-all"
+                onClick={handleCheckout}>
+                Place Order
+              </NavLink>
             </div>
           )}
         </div>

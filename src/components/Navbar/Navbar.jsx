@@ -14,7 +14,7 @@ const Navbar = () => {
     <nav className="py-3 px-4 bg-[#fff0f0] border-b-2 border-[#ff7373] sticky top-0 z-50 shadow-md">
       <div className="flex justify-between items-center">
 
-        <p className="font-semibold text-2xl text-[#f60202] max-sm:text-xl">Darbhanga Dairy</p>
+        <NavLink to='/'><h1 className="font-semibold text-2xl text-[#f60202] max-sm:text-xl">Darbhanga Dairy</h1></NavLink>
 
         <div className="hidden sm:flex items-center group">
           <input
